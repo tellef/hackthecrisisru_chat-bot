@@ -13,7 +13,7 @@ module.exports = (robot) ->
     dialog.timeout = (msg) ->
       robot.logger.info "Onboarding dialogue with #{msg.envelope.user.name} timed out."
 
-    msg.reply "Hi #{msg.envelope.user.name}! I'm Una, friendly bot. Quick question: Do you want me to sing a song?"
+    msg.reply "Hi #{msg.envelope.user.name}! I'm Annie, friendly bot. Quick question: Do you want me to sing a song?"
 
     dialog.addChoice /(yes|yeah|yup|yep|y)/i, (msg2) ->
        msg2.reply "TWINKLE TWINKLE LITTLE STAAAR!!!"
