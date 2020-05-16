@@ -1,0 +1,20 @@
+name: deploy to aws
+on: 
+  push:
+    branches: [ master ]
+jobs:
+
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key : ${{ secrets.SSHKEY }}
+        script: |
+          cd /home/hubot/hackthecrisisru_chat-bot
+          git pull
+          pm2 restart 'bin/hubot -a telegram'
