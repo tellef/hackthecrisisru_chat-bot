@@ -17,4 +17,4 @@ jobs:
         script: |
           cd /home/hubot/hackthecrisisru_chat-bot
           git pull
-          pm2 restart 'hubot -a telegram'
+          /home/hubot/.nvm/versions/node/v14.2.0/bin/pm2 restart 'hubot -a telegram'
